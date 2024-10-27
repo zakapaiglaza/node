@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
-import Config from './db_config';
+import Config from './Config';
 
 class DB {
     public sequelize: Sequelize;

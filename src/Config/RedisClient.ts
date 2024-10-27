@@ -1,5 +1,5 @@
 import { createClient, RedisClientType } from 'redis';
-import Config from './db_config';
+import Config from './Config';
 
 class RedisClient {
     private client: RedisClientType;
@@ -13,7 +13,7 @@ class RedisClient {
         });
 
         this.client.on('error', (err) => {
-            console.error('error Redis Client', err);
+            console.error('error redis client', err);
         });
 
         this.client.connect().catch((err) => console.error('Failed to connect Redis:', err));
@@ -23,7 +23,7 @@ class RedisClient {
         try {
             return await this.client.get(key);
         } catch (err) {
-            console.error('error getting value from redis:', err);
+            console.error('error get value from redis:', err);
             throw err;
         }
     }

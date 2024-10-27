@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import db from './src/dbSetting/db_connection';
-import movieRoutes from './src/routes/movie_routes';
+import db from './src/Config/DBconnection';
+import movieRoutes from './src/routes/MovieRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3000; 

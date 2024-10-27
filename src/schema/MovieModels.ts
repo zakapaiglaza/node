@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from 'sequelize';
-import db from '../dbSetting/db_connection';
-import Movie from '../interface/interface';
+import db from '../Config/DBconnection';
+import {Movie} from '../interface/MovieInterface';
 
 
 
