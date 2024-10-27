@@ -4,7 +4,7 @@ import db from './src/Config/DBconnection';
 import movieRoutes from './src/routes/MovieRoutes';
 
 const app = express();
-const PORT = process.env.PORT || 3000; 
+const PORT = process.env.SERVER_PORT || 3000; 
 
 app.use(bodyParser.json());
 app.use('/api', movieRoutes);

@@ -21,6 +21,15 @@ services:
     networks:
       - my_network
 
+  node:
+    image: node:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - my_network
+    command: npm start
+
+
 volumes:
   postgres_data:
 
