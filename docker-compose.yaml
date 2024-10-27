@@ -4,11 +4,11 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_DB: node-test
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASS}
     ports:
-      - "5433:5432"
+      - ${DB_PORT}:${DB_PORT}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -17,16 +17,17 @@ services:
   redis:
     image: redis:latest
     ports:
-      - "6380:6379"
+      - ${REDIS_PORT}:${REDIS_PORT}
     networks:
       - my_network
 
   node:
     image: node:latest
     ports:
-      - "3000:3000"
+      - ${SERVER_PORT}:${SERVER_PORT}
     networks:
       - my_network
+
     command: npm start
 
 
