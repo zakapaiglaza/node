@@ -22,16 +22,11 @@ services:
       - my_network
 
   node:
-    image: node:latest
+    build: ./
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     networks:
       - my_network
-    working_dir: /app
-    volumes:
-      - .:/app
-    
-    command: npm start
 
 
 volumes:

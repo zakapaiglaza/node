@@ -1,18 +1,20 @@
 # node-test
 
 
-cp .env.example .env
+```cp .env.example .env```
 
-docker-compose up -d
+```docker-compose up -d```
 
-psql -U postgres -h localhost -c "CREATE DATABASE node_test;"
+```docker compose exec web bash```
 
-docker compose exec web node-test
+```psql -U postgres -h localhost -c "CREATE DATABASE node_test;"```
 
-npm install 
+```docker compose exec web node-test```
 
-npx sequelize-cli db:migrate
+```npm ci```
 
-npx sequelize-cli db:seed:all
+```npx sequelize-cli db:migrate```
 
-npm start
+```npx sequelize-cli db:seed:all```
+
+```npm start```
