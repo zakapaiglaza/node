@@ -27,6 +27,7 @@ services:
       - ${SERVER_PORT}:${SERVER_PORT}
     networks:
       - my_network
+    working_dir: /app
     volumes:
       - .:/app
     
