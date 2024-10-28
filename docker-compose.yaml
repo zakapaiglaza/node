@@ -27,7 +27,9 @@ services:
       - ${SERVER_PORT}:${SERVER_PORT}
     networks:
       - my_network
-
+    volumes:
+      - .:/app
+    
     command: npm start
 
 
