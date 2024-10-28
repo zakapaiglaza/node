@@ -5,16 +5,15 @@
 
 ```docker-compose up -d```
 
-```docker compose exec web bash```
 
+
+```docker compose exec db bash```
 ```psql -U postgres -h localhost -c "CREATE DATABASE node_test;"```
 
-```docker compose exec web node-test```
 
-```npm ci```
+```docker compose exec node bash```
 
 ```npx sequelize-cli db:migrate```
 
 ```npx sequelize-cli db:seed:all```
 
-```npm start```
