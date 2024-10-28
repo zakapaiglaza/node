@@ -11,25 +11,17 @@ services:
       - ${DB_PORT}:${DB_PORT}
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    networks:
-      - my_network
 
   redis:
     image: redis:latest
     ports:
       - ${REDIS_PORT}:${REDIS_PORT}
-    networks:
-      - my_network
 
   node:
     build: ./
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
-    networks:
-      - my_network
 
 volumes:
   postgres_data:
 
-networks:
-  my_network:
